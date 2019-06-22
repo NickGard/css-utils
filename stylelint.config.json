@@ -1,47 +1,96 @@
 {
-  "plugins": ["stylelint-a11y"],
+  "plugins": [
+    "stylelint-a11y"
+  ],
   "rules": {
-    "color-named": ["never",
+    "color-named": [
+      "never",
       {
         "message": "Use atomic color classes or SCSS variables instead of a bespoke color."
-      }],
-    "color-no-hex": [true,
+      }
+    ],
+    "color-no-hex": [
+      true,
       {
         "message": "Use atomic color classes or SCSS variables instead of a bespoke color."
-      }],
+      }
+    ],
     "declaration-no-important": true,
-    "declaration-property-unit-whitelist": [{
-      "font-size": ["rem"],
-      "width": ["em, %"],
-      "height": ["em, %"],
-      "/^padding/": ["em"],
-      "/^margin/": ["em"],
-      "text-indent": ["em"],
-      "/border/": ["em"],
-      "top": ["em, %"],
-      "left": ["em, %"],
-      "right": ["em, %"],
-      "bottom": ["em, %"]
-    },
-    {
-      "message": "Use rem for font-sizing, em or % for spacing."
-    }],
-    "declaration-property-value-blacklist": [{
-      "outline": ["none", "0", "0px", "transparent"],
-      "outline-width": ["/^0$|^0\\w/"],
-      "outline-style": ["none"],
-      "outline-color": ["transparent", "/^(rgba|hsla)\\((\\d+,\\s*){3}0\\)$/"]
-    },
-    {
-      "message": "do not nullify outline styling unless accessible :focus styling is also applied."
-    }],
+    "declaration-property-unit-whitelist": [
+      {
+        "font-size": [
+          "rem"
+        ],
+        "width": [
+          "em, %"
+        ],
+        "height": [
+          "em, %"
+        ],
+        "/^padding/": [
+          "em"
+        ],
+        "/^margin/": [
+          "em"
+        ],
+        "text-indent": [
+          "em"
+        ],
+        "/border/": [
+          "em"
+        ],
+        "top": [
+          "em, %"
+        ],
+        "left": [
+          "em, %"
+        ],
+        "right": [
+          "em, %"
+        ],
+        "bottom": [
+          "em, %"
+        ]
+      },
+      {
+        "message": "Use rem for font-sizing, em or % for spacing."
+      }
+    ],
+    "declaration-property-value-blacklist": [
+      {
+        "outline": [
+          "none",
+          "0",
+          "0px",
+          "transparent"
+        ],
+        "outline-width": [
+          "/^0$|^0\\w/"
+        ],
+        "outline-style": [
+          "none"
+        ],
+        "outline-color": [
+          "transparent",
+          "/^(rgba|hsla)\\((\\d+,\\s*){3}0\\)$/"
+        ],
+        "flex-direction": [
+          "row-reverse",
+          "column-reverse"
+        ]
+      },
+      {
+        "message": "do not nullify outline styling unless accessible :focus styling is also applied."
+      }
+    ],
     "declaration-property-value-whitelist": [
       {
-        "opacity": [0, 1],
-        "transition":
-          "/^opacity$|^transform$|^transform,?\\s*opacity$|^opacity,?\\s*transform$/|^none$",
-        "transition-property":
-          "/^opacity$|^transform$|^transform,?\\s*opacity$|^opacity,?\\s*transform$/|^none$"
+        "opacity": [
+          0,
+          1
+        ],
+        "transition": "/^opacity$|^transform$|^transform,?\\s*opacity$|^opacity,?\\s*transform$/|^none$",
+        "transition-property": "/^opacity$|^transform$|^transform,?\\s*opacity$|^opacity,?\\s*transform$/|^none$"
       },
       {
         "message": "Transitioning properties other than opacity and transform causes a reflow or a repaint and can negatively affect performance. Setting an opacity other than 0 or 1 changes the background color and introduces a new stacking context."
@@ -103,17 +152,51 @@
     "selector-max-empty-lines": 0,
     "selector-max-id": 0,
     "selector-max-pseudo-class": 2,
-    "selector-max-universal": [0, { "severity": "warning" }],
+    "selector-max-universal": [
+      0,
+      {
+        "severity": "warning"
+      }
+    ],
     "selector-no-qualifying-type": true,
-    "time-min-milliseconds": [150, { "severity": "warning" }],
-    "unit-blacklist": ["px", "in", "cm", "mm", "q", "pt", "pc", "ex", "ch"],
-
+    "time-min-milliseconds": [
+      150,
+      {
+        "severity": "warning"
+      }
+    ],
+    "unit-blacklist": [
+      "px",
+      "in",
+      "cm",
+      "mm",
+      "q",
+      "pt",
+      "pc",
+      "ex",
+      "ch"
+    ],
     "a11y/media-prefers-reduced-motion": true,
     "a11y/no-outline-none": true,
     "a11y/selector-pseudo-class-focus": true,
     "a11y/content-property-no-static-value": true,
-    "a11y/font-size-is-readable": [true, { "severity": "warning" }],
-    "a11y/no-obsolete-attribute": [true, { "severity": "warning" }],
-    "a11y/no-obsolete-element": [true, { "severity": "warning" }]
+    "a11y/font-size-is-readable": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "a11y/no-obsolete-attribute": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "a11y/no-obsolete-element": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ]
   }
 }
