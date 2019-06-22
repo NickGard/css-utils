@@ -21,9 +21,14 @@ time, mark, audio, video {
   border: 0;
   font-size: inherit;
   font: inherit;
-  /* remove the following if the font supports bold and italic */
-  font-weight: normal; /* prevent faux bold */
-  font-style: normal; /* prevent faux italic */
+}
+i, cite, em, var, dfn, address {
+  /* prevent faux italic */
+  font-style: normal;
+}
+b, h1, h2, h3, h4, h5, h6, strong, th {
+  /* prevent faux bold */
+  font-weight: normal;
 }
 /* HTML5 display-role reset for older browsers (UC Browser on Android) */
 article, aside, figcaption, figure, footer, header, menu, section {
@@ -44,12 +49,22 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-body {
-  box-sizing: border-box; /* intuitive sizing */
-}
 *, ::before, ::after {
-  box-sizing: inherit; /* allow inheritable overrides */
+  box-sizing: border-box; /* intuitive sizing */
 }
 [hidden] {
   display: none !important; /* enforce semantics */
+}
+/* https://github.com/mozdevs/cssremedy/issues/11#issuecomment-462867630 */
+@media (prefers-reduced-motion: reduce) {
+  *:not(.safe-animation),
+  *:not(.safe-animation)::before,
+  *:not(.safe-animation)::after {
+    animation-duration: 0.01s !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
 }
