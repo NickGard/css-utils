@@ -61,7 +61,8 @@
         "outline": [
           "none",
           "/^0\\s*\\w{2}/",
-          "transparent"
+          "transparent",
+          "/^(rgba|hsla)\\((\\d+,\\s*){3}0\\)$/"
         ],
         "outline-width": [
           "/^0$|^0\\w/"
@@ -70,6 +71,10 @@
           "none"
         ],
         "outline-color": [
+          "transparent",
+          "/^(rgba|hsla)\\((\\d+,\\s*){3}0\\)$/"
+        ],
+        "caret-color": [
           "transparent",
           "/^(rgba|hsla)\\((\\d+,\\s*){3}0\\)$/"
         ],
@@ -119,17 +124,20 @@
     ],
     "property-blacklist": [
       [
-        "/color/",
+        "/^(background-)?color$/",
         "/^font/",
         "/^text(?!-overflow)/",
+        "direction",
         "letter-spacing",
         "line-height",
         "text-transform",
+        "user-select",
+        "user-zoom",
         "word-spacing",
         "z-index"
       ],
       {
-        "message": "font-, text-, letter-spacing, word-spacing, and line-height properties should only be set in conjunction with the font-family. text-transform incorrectly capitalizes some (non-English) characters and should never be used. Flexbox properties should be used instead of text-align. Instead of using z-index, re-structure HTML to use native browser stacking."
+        "message": "font-*, text-*, letter-spacing, word-spacing, and line-height properties should only be set in conjunction with the font-family. text-transform incorrectly capitalizes some (non-English) characters and should never be used. Flexbox properties should be used instead of text-align. Instead of using z-index, re-structure HTML to use native browser stacking."
       }
     ],
     "selector-pseudo-element-blacklist": [
