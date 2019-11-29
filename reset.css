@@ -44,6 +44,7 @@ q:before, q:after {
   content: none;
 }
 table {
+  table-layout: fixed; /* let authors control table attributes */
   /* default to compact tables */
   border-collapse: collapse;
   border-spacing: 0;
@@ -51,11 +52,20 @@ table {
 img {
   vertical-align: bottom; /* remove bottom spacing from images */
 }
+img, object, video, iframe {
+  max-width: 100%; /* don't allow replaced elements to break out of parent containers */
+}
 *, ::before, ::after {
+  position: relative; /* set every element as the frame for its childrens' positioning */
   box-sizing: border-box; /* intuitive sizing */
+  background-clip: padding-box; /* intuitive background image sizing */
+  hyphens: auto; /* better readability - don't forget to set a lang attribute */
 }
 [hidden] {
   display: none !important; /* enforce semantics */
+}
+:disabled, [disabled], [aria-disabled="true"] {
+  cursor: not-allowed; /* affordance */
 }
 /* https://github.com/mozdevs/cssremedy/issues/11#issuecomment-462867630 */
 @media (prefers-reduced-motion: reduce) {
